@@ -1,0 +1,26 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <div class="navbar-header">
+            <%=link_to "WordSprout", root_path, class: "navbar-brand topnav" %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            
+            <% if logged_in? %>
+                <li><%=link_to "WordTree", wordtree_path %></li>
+                <li><%=link_to "Profile", current_user %></li>
+                <li><%=link_to "Logout", logout_path, method: "delete" %></li>
+                
+                <% if current_user.admin? %>
+                    <li><%= link_to "Admin Console", adminConsole_path %></li>
+                <% end %>
+                
+            <% else %>
+                <li><%=link_to "WordTree", wordtree_path %></li>
+                <li><%=link_to "Signup", signup_path %></li>
+                <li><%=link_to "Login", login_path %></li>
+            <% end %>
+            
+        </ul>
+    </div>
+</nav>

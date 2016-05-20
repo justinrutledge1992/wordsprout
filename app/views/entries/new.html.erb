@@ -1,0 +1,33 @@
+<% provide(:title, " | New Entry") %>
+
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="login-panel panel panel-default">
+                
+                <div class="panel-heading">
+                    New Entry
+                </div>
+                <div class="panel-body">
+                    <%= render 'shared/error_messages', object: @entry %>
+                    
+                    <%= form_for(@entry) do |f| %>
+                        
+                        <div class="form-group">
+                            <%= f.label :title, "Title" %>
+                            <%= f.text_field :title, class: "form-control" %>
+                        </div>
+                            
+                        <div class="form-group">
+                            <%= f.label :content, "Description" %>
+                            <%= f.text_area :content, class: "form-control" %>
+                        </div>
+                    
+                        <%= f.submit "Post Sprout", class: "btn btn-primary col-md-4 col-md-offset-4" %>
+                    <% end %>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

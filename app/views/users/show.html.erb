@@ -1,0 +1,4 @@
+User Profile: 
+<p><%= current_user.firstname %> <%= current_user.lastname %></p>
+<p><%= current_user.email %></p>
+<p><%= link_to 'Edit Profile', edit_user_path(@user) %></p>

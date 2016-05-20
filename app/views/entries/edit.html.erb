@@ -1,0 +1,32 @@
+<% provide(:title, " | Edit Sprout") %>
+
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="login-panel panel panel-default">
+                
+                <div class="panel-heading">
+                    Edit Sprout
+                </div>
+                <div class="panel-body">
+                    <%= render 'shared/error_messages', object: @ad %>
+                    
+                    <%= form_for(@entry) do |f| %>
+                        <div class="form-group">
+                            <%= f.label :title, "Title" %>
+                            <%= f.text_field :title, class: "form-control" %>
+                        </div>
+                            
+                        <div class="form-group">
+                            <%= f.label :content, "Content" %>
+                            <%= f.text_area :content, class: "form-control" %>
+                        </div>
+                    
+                        <%= f.submit "Update Sprout", class: "btn btn-primary col-md-4 col-md-offset-4" %>
+                    <% end %>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
